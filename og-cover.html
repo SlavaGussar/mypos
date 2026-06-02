@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  .og{position:relative;width:1200px;height:630px;background:#08090a;
+    font-family:Inter,sans-serif;color:#f7f8f8;overflow:hidden;
+    padding:74px 80px;display:flex;flex-direction:column;justify-content:space-between}
+  /* ambient glow */
+  .og::before{content:"";position:absolute;width:720px;height:720px;right:-160px;top:-260px;
+    background:radial-gradient(circle, rgba(77,124,255,.28), transparent 62%);filter:blur(8px)}
+  .og::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+    background:linear-gradient(90deg,#4d7cff,#7aa2ff 40%,transparent)}
+  /* faint circuit grid */
+  .grid{position:absolute;inset:0;opacity:.5;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:48px 48px;
+    -webkit-mask-image:radial-gradient(120% 100% at 80% 0%, #000 30%, transparent 75%);
+            mask-image:radial-gradient(120% 100% at 80% 0%, #000 30%, transparent 75%)}
+  .top{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-size:34px;font-weight:800;letter-spacing:-1px}
+  .logo b{color:#4d7cff}
+  .est{font-family:'Geist Mono',monospace;font-size:15px;color:#8a90a0;letter-spacing:.04em}
+  .mid{position:relative;z-index:2}
+  .kick{font-family:'Geist Mono',monospace;font-size:18px;color:#5b6cff;letter-spacing:.06em;margin-bottom:22px}
+  h1{font-size:64px;line-height:1.04;font-weight:700;letter-spacing:-2px}
+  h1 .b{color:#4d7cff}
+  .sub{margin-top:26px;font-size:25px;line-height:1.4;color:#b6bccb;max-width:880px;font-weight:400}
+  .chips{position:relative;z-index:2;display:flex;gap:13px;flex-wrap:wrap}
+  .chip{font-size:18px;font-weight:500;color:#cfd4e0;padding:11px 20px;border-radius:999px;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="grid"></div>
+    <div class="top">
+      <div class="logo">MY<b>POS</b></div>
+      <div class="est">в Казахстане с 2016</div>
+    </div>
+    <div class="mid">
+      <div class="kick">ПЛАТЕЖИ · ТЕЛЕМЕТРИЯ · ФИСКАЛИЗАЦИЯ</div>
+      <h1><span class="b">Kaspi QR</span> для&nbsp;аппаратов<br>самообслуживания</h1>
+      <div class="sub">Собственный контроллер: приём Kaspi&nbsp;/&nbsp;Halyk&nbsp;QR, телеметрия и онлайн-касса с фискализацией.</div>
+    </div>
+    <div class="chips">
+      <span class="chip">Автомойки</span>
+      <span class="chip">Кофемашины</span>
+      <span class="chip">Водоматы</span>
+      <span class="chip">Вендинг</span>
+      <span class="chip">Онлайн-касса</span>
+    </div>
+  </div>
+</body>
+</html>
