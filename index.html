@@ -113,11 +113,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="nav-dd-menu">
+          <a href="resheniya.html">Все решения</a>
           <a href="kaspi-qr-avtomoyki.html">Автомойки самообслуживания</a>
           <a href="kaspi-qr-silomery.html">Игровые автоматы и силомеры</a>
         </div>
       </div>
       <a href="#prices">Цена</a>
+      <a href="#contacts">Контакты</a>
     </nav>
     <div class="hdr-right">
       <a class="lk" href="http://merchant.multibank.kz" target="_blank" rel="noopener">Личный кабинет</a>
@@ -204,7 +206,7 @@
             <p>Оплата картой и телефоном — Apple Pay, Google Pay, Visa, Mastercard — плюс приём по QR.</p>
             <ul class="iv-list">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Чиповые и бесконтактные карты</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> NEXGO K300 · PCI 5.x</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> POS-терминал NEXGO K300</li>
             </ul>
           </div>
           <div class="intake-view" data-v="fisc">
@@ -600,9 +602,11 @@
       <h2 class="pt-title">Создаём ценность вместе</h2>
       <p class="pt-text">Оставьте заявку — подберём решение под ваш бизнес.</p>
       <form class="cx2-form pt-form" id="leadForm3">
-        <div class="cx2-field"><input type="text" placeholder="Ваше имя" required></div>
-        <div class="cx2-field"><input type="tel" placeholder="Телефон" required></div>
-        <div class="cx2-field"><textarea rows="3" placeholder="Сообщение"></textarea></div>
+        <input type="hidden" name="_subject" value="Заявка с сайта MyPos">
+        <input type="hidden" name="_template" value="table">
+        <div class="cx2-field"><input type="text" name="Имя" placeholder="Ваше имя" required></div>
+        <div class="cx2-field"><input type="tel" name="Телефон" placeholder="Телефон" required></div>
+        <div class="cx2-field"><textarea name="Сообщение" rows="3" placeholder="Сообщение"></textarea></div>
         <button class="cx2-btn" type="submit" id="leadBtn3">Отправить заявку</button>
         <p class="cx2-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
       </form>
@@ -658,11 +662,11 @@
         <a href="#main" class="brand"><img src="assets/logo.svg" alt="MyPos"></a>
         <p class="fdesc">Платежи, телеметрия и аналитика для бизнеса. На рынке Казахстана с 2016 года.</p>
         <div class="app-badges">
-          <a class="app-badge" href="#" aria-label="Скачать в App Store">
+          <a class="app-badge" href="https://apps.apple.com/ru/app/mypos-kz/id6746710152" target="_blank" rel="noopener" aria-label="Скачать в App Store">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.78c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.14 9.14.76 1.1 1.66 2.34 2.85 2.29 1.14-.05 1.57-.74 2.95-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.43-3.66zM14.13 5.84c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.09 1.76-.95 2.79 1.02.08 2.05-.52 2.68-1.26z"/></svg>
             <span><small>Загрузить в</small>App&nbsp;Store</span>
           </a>
-          <a class="app-badge" href="#" aria-label="Доступно в Google Play">
+          <a class="app-badge" href="https://play.google.com/store/search?q=MyPOS.kz&c=apps" target="_blank" rel="noopener" aria-label="Доступно в Google Play">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M4.4 21.6 14 12 4.4 2.4c-.3.2-.5.6-.5 1.1v17c0 .5.2.9.5 1.1z" opacity=".9"/><path fill="#4285f4" d="M3.9 2.4c-.3.2-.5.6-.5 1.1v17c0 .5.2.9.5 1.1L13.5 12 3.9 2.4z"/><path fill="#fbbc04" d="M17.3 8.7 14 12l3.3 3.3 3.4-1.9c.6-.4.6-1.4 0-1.8l-3.4-1.9z"/><path fill="#ea4335" d="M3.9 2.4 14 12l3.3-3.3L6 2.1c-.7-.4-1.5-.4-2.1.3z" opacity=".95"/><path fill="#34a853" d="M3.9 21.6 14 12l3.3 3.3L6 21.9c-.7.4-1.5.4-2.1-.3z"/></svg>
             <span><small>Доступно в</small>Google&nbsp;Play</span>
           </a>
@@ -672,10 +676,8 @@
         <div class="foot-col">
           <h5>Продукт</h5>
           <a href="#about">О продуктах</a>
-          <a href="#app">Кому подходит</a>
-          <a href="#telemetry">Преимущества</a>
           <a href="#prices">Стоимость</a>
-          <a href="kaspi-qr-avtomoyki.html">Kaspi QR для автомоек</a>
+          <a href="resheniya.html">Бизнес</a>
         </div>
         <div class="foot-col">
           <h5>Документы</h5>
@@ -692,7 +694,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2016–2026 MyPos. Официальный партнёр Kaspi.kz</span>
+      <span>© 2016–2026 MyPos. Официальный партнёр Kaspi.kz и Halyk Bank</span>
       <span>г. Алматы, ул. Байзакова 280</span>
     </div>
   </div>

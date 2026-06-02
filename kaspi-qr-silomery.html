@@ -69,15 +69,16 @@
       <a href="index.html#about">Продукт</a>
       <a href="index.html#telemetry">Телеметрия</a>
       <div class="nav-dd">
-        <button class="nav-dd-btn" type="button" aria-expanded="false">Решения
+        <button class="nav-dd-btn active" type="button" aria-expanded="false">Решения
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="nav-dd-menu">
           <a href="kaspi-qr-avtomoyki.html">Автомойки самообслуживания</a>
-          <a href="kaspi-qr-silomery.html">Игровые автоматы и силомеры</a>
+          <a href="kaspi-qr-silomery.html" class="active">Игровые автоматы и силомеры</a>
         </div>
       </div>
       <a href="index.html#prices">Цена</a>
+      <a href="index.html#contacts">Контакты</a>
     </nav>
     <div class="hdr-right">
       <a class="lk" href="http://merchant.multibank.kz" target="_blank" rel="noopener">Личный кабинет</a>
@@ -92,7 +93,7 @@
     <a href="index.html#about">Продукт</a>
     <a href="index.html#telemetry">Телеметрия</a>
     <a href="kaspi-qr-avtomoyki.html">Решения · Автомойки</a>
-    <a href="kaspi-qr-silomery.html">Решения · Силомеры</a>
+    <a href="kaspi-qr-silomery.html" class="active">Решения · Силомеры</a>
     <a href="index.html#prices">Цена</a>
     <a class="btn btn-blue" href="#lead">Заказать устройство</a>
   </div>
@@ -188,6 +189,8 @@
     b.style.opacity='.7';
   });
   (function(){
+    var hdr=document.getElementById('hdr');
+    if(hdr){ var onHdr=function(){hdr.classList.toggle('scrolled', window.scrollY>16);}; onHdr(); window.addEventListener('scroll', onHdr, {passive:true}); }
     var burger=document.getElementById('burger'), mnav=document.getElementById('mnav');
     if(burger&&mnav){
       burger.addEventListener('click', function(){

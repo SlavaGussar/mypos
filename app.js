@@ -9,6 +9,34 @@
   onHdr();
   window.addEventListener('scroll', onHdr, {passive:true});
 
+  /* ---- nav scroll-spy: highlight section in view ---- */
+  const spyLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+  const spyTargets = spyLinks
+    .map(a => ({ a, sec: document.getElementById(a.getAttribute('href').slice(1)) }))
+    .filter(t => t.sec);
+  if (spyTargets.length){
+    const probe = 120; // px from top of viewport
+    const zOf = el => { const z = parseInt(getComputedStyle(el).zIndex); return isNaN(z) ? 0 : z; };
+    const onSpy = () => {
+      let current = null, bestZ = -Infinity;
+      // among sections crossing the probe line, prefer the front-most (highest z-index)
+      spyTargets.forEach(t => {
+        const r = t.sec.getBoundingClientRect();
+        if (r.top <= probe && r.bottom > probe){
+          const z = zOf(t.sec);
+          if (z >= bestZ){ bestZ = z; current = t; }
+        }
+      });
+      if (!current){
+        spyTargets.forEach(t => { if (t.sec.getBoundingClientRect().top <= probe) current = t; });
+      }
+      spyLinks.forEach(a => a.classList.remove('active'));
+      if (current) current.a.classList.add('active');
+    };
+    onSpy();
+    window.addEventListener('scroll', onSpy, {passive:true});
+  }
+
   /* ---- mobile burger ---- */
   const burger = document.getElementById('burger');
   const mnav = document.getElementById('mnav');
@@ -1354,17 +1382,29 @@
     });
   });
 
-  /* ---- lead form ---- */
-  const form = document.getElementById('leadForm');
-  [form, document.getElementById('leadForm2'), document.getElementById('leadForm3')].forEach(f => {
+  /* ---- lead form → email via FormSubmit ---- */
+  [document.getElementById('leadForm'), document.getElementById('leadForm2'), document.getElementById('leadForm3')].forEach(f => {
     if (!f) return;
-    f.addEventListener('submit', (e)=>{
+    f.addEventListener('submit', async (e)=>{
       e.preventDefault();
       const btn = f.querySelector('button[type=submit]');
       const orig = btn.textContent;
-      btn.textContent = 'Заявка отправлена ✓';
-      btn.style.background = 'var(--green)';
-      setTimeout(()=>{ f.reset(); btn.textContent = orig; btn.style.background=''; }, 2600);
+      btn.disabled = true;
+      btn.textContent = 'Отправляем…';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/info@mypos.kz', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(f)
+        });
+        if (!res.ok) throw new Error('bad status');
+        btn.textContent = 'Заявка отправлена ✓';
+        btn.style.background = 'var(--green)';
+        setTimeout(()=>{ f.reset(); btn.textContent = orig; btn.style.background=''; btn.disabled=false; }, 3000);
+      } catch (_){
+        btn.textContent = 'Позвоните: +7 747 595 64 12';
+        setTimeout(()=>{ btn.textContent = orig; btn.disabled=false; }, 3500);
+      }
     });
   });
 })();

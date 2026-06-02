@@ -79,8 +79,8 @@ body::before{
   border-bottom:1px solid transparent;transition:.25s ease;
 }
 .hdr.scrolled{
-  background:rgba(8,9,10,.72);backdrop-filter:blur(14px) saturate(160%);
-  -webkit-backdrop-filter:blur(14px) saturate(160%);
+  background:rgba(8,9,10,.88);backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
   border-bottom:1px solid var(--line);
 }
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%}
@@ -93,6 +93,20 @@ body::before{
   transition:.15s ease;font-weight:450;
 }
 .nav a:hover{color:var(--tx);background:rgba(255,255,255,.05)}
+.nav a.active{color:var(--tx);background:rgba(255,255,255,.06)}
+.nav-dd-btn.active{color:var(--tx)}
+.nav-dd-menu a.active{color:#fff;background:rgba(255,255,255,.06)}
+/* solutions hub cards */
+.soln-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:10px}
+.soln-card{display:flex;flex-direction:column;gap:10px;padding:30px;border-radius:18px;
+  background:var(--panel);border:1px solid var(--line);transition:transform .2s,border-color .2s,background .2s}
+.soln-card:hover{border-color:var(--blue-line);background:var(--panel-2);transform:translateY(-3px)}
+.soln-card h3{font-size:20px;font-weight:600;color:#fff;letter-spacing:-.015em}
+.soln-card p{font-size:14px;color:var(--tx-3);line-height:1.5}
+.soln-card .soln-go{margin-top:auto;font-size:13px;color:var(--blue-2);font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.soln-card .soln-go svg{width:15px;height:15px}
+@media(max-width:680px){ .soln-grid{grid-template-columns:1fr} }
+.mnav a.active{color:var(--tx)}
 /* dropdown nav (Решения) */
 .nav-dd{position:relative;display:flex;align-items:center}
 .nav-dd-btn{display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:14px;color:var(--tx-3);
@@ -127,7 +141,7 @@ body::before{
 
 /* ---------- Generic section ---------- */
 section{position:relative;z-index:1}
-.sec{padding-block:clamp(72px,11vh,140px)}
+.sec{padding-block:clamp(44px,6vh,88px)}
 .eyebrow{
   display:inline-block;
   font-family:var(--mono);font-size:13px;font-weight:400;color:var(--tx-3);letter-spacing:.06em;
@@ -175,7 +189,7 @@ h1,h2,h3,h4{letter-spacing:-0.03em;line-height:1.05;font-weight:600;text-wrap:ba
 .stat .lbl{margin-top:9px;font-size:13.5px;color:var(--tx-3);line-height:1.4}
 
 /* ---------- Stats · modern variant (compare) ---------- */
-.stats2{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stats2{margin-top:32px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .stats2 .stat2{grid-column:span 1;position:relative;padding:26px 22px 22px;border-radius:16px;
   background:linear-gradient(160deg,rgba(77,124,255,.07),transparent 60%),rgba(255,255,255,.022);
   border:1px solid var(--line);overflow:hidden;transition:transform .25s ease,border-color .2s}
@@ -1533,8 +1547,8 @@ a.cx2-iv:hover{color:#6f97ff}
 #main2{padding-top:20px}
 #main{padding-top:20px}
 .hero2{position:relative;border-top:1px solid var(--line);
-  min-height:clamp(440px,52vw,640px);display:flex;align-items:center;
-  padding-top:clamp(40px,5vh,70px);overflow:hidden}
+  min-height:clamp(360px,40vw,500px);display:flex;align-items:center;
+  padding-top:clamp(28px,3.5vh,52px);overflow:hidden}
 #neuralCanvas,#threadCanvas,#threadCanvas4,#boardCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
 .hero2-board .hero2-text{max-width:480px}
 .hero5-board{position:absolute;right:2%;top:50%;transform:translateY(-50%);width:42%;max-width:440px;z-index:1;pointer-events:none}
