@@ -129,15 +129,16 @@ body::before{
 .burger{display:none;width:40px;height:40px;border-radius:9px;border:1px solid var(--line-2);
   align-items:center;justify-content:center}
 .burger svg{width:18px;height:18px}
-/* mobile dropdown nav */
-.mnav{display:none;position:absolute;top:64px;left:0;right:0;z-index:99;
-  flex-direction:column;gap:2px;padding:14px var(--pad) 20px;
-  background:rgba(8,9,10,.94);backdrop-filter:blur(16px) saturate(160%);
-  -webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--line)}
+/* mobile fullscreen menu */
+.mnav{display:none;position:fixed;top:0;left:0;right:0;bottom:0;height:100dvh;z-index:90;
+  flex-direction:column;gap:0;padding:80px var(--pad) 28px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  background:#08090a;border-bottom:1px solid var(--line)}
 .mnav.open{display:flex}
-.mnav a{font-size:16px;color:var(--tx-2);padding:12px 4px;border-bottom:1px solid var(--line);transition:.15s}
-.mnav a:hover{color:var(--tx)}
-.mnav a.btn{margin-top:12px;border-bottom:none;justify-content:center;color:#fff}
+.mnav a{display:flex;align-items:center;font-size:17px;color:var(--tx-2);min-height:52px;padding:10px 4px;border-bottom:1px solid var(--line);transition:.15s}
+.mnav a:hover,.mnav a:active{color:var(--tx)}
+.mnav a.active{color:var(--tx)}
+.mnav a.btn{margin-top:18px;min-height:52px;border-bottom:none;justify-content:center;color:#fff}
+body.menu-open{overflow:hidden}
 
 /* ---------- Generic section ---------- */
 section{position:relative;z-index:1}
@@ -895,6 +896,8 @@ a.bchip:hover{border-color:var(--blue-line);background:var(--panel-2);color:var(
   background:linear-gradient(120deg,#0a0e1a,#141a2c);border-radius:22px;padding:32px 36px}
 .p5-bulk-l h3{font-size:clamp(20px,2.4vw,26px);font-weight:600;color:#fff;letter-spacing:-.02em}
 .p5-bulk-l p{font-size:15px;color:#a7adbd;margin-top:8px;max-width:46ch}
+.p5-bulk-note{margin-top:14px;padding-top:14px;border-top:1px solid rgba(120,150,255,.18);font-size:14px}
+.p5-bulk-note b{color:#7e9dff;font-weight:600}
 .p5-bulk-btn{flex-shrink:0;padding:15px 30px;border-radius:12px;background:#fff;color:#0a0b0d;font-size:15px;font-weight:600;transition:.18s;white-space:nowrap}
 .p5-bulk-btn:hover{background:#e8eaee;transform:translateY(-1px)}
 @media(max-width:760px){ .p5-cards{grid-template-columns:1fr} .p5-bulk{flex-direction:column;align-items:flex-start} }
@@ -1669,6 +1672,19 @@ a.cx2-iv:hover{color:#6f97ff}
 @media(max-width:760px){
   :root{--pad:18px}
   .hdr-right .lk{display:none}
+  /* убрать дубль кнопки «Связаться» из шапки — остаётся в меню */
+  .hdr-right .btn-blue{display:none}
+  /* тап-зоны ≥ 44px */
+  .pi-tabs button{padding:13px 9px;min-height:46px}
+  .dcab-tabs button{padding:13px 0;min-height:46px;font-size:12.5px}
+  .dash-link{padding:9px 12px}
+  .foot-col a{padding:8px 0;margin-bottom:2px;min-height:44px;display:flex;align-items:center}
+  .foot-wa{min-height:44px}
+  /* голосовая аналитика: приглушить волну под подписью */
+  #voice .va-wave{opacity:.42;height:22%}
+  /* герой: усилить подложку, чтобы точки сетки не лезли на текст */
+  #main .hero2-text::before{left:-32%;right:-32%;top:-26%;bottom:-26%;
+    background:radial-gradient(78% 72% at 42% 50%, rgba(8,9,11,.97), rgba(8,9,11,.8) 52%, transparent 84%)}
   .hero{padding-top:110px}
   .prod-grid,.price-grid,.contacts-grid{grid-template-columns:1fr}
   .flow-demo{grid-template-columns:1fr}

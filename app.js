@@ -41,12 +41,15 @@
   const burger = document.getElementById('burger');
   const mnav = document.getElementById('mnav');
   if (burger && mnav){
-    const close = () => { mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); };
+    const close = () => { mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-open'); };
     burger.addEventListener('click', () => {
       const open = mnav.classList.toggle('open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('menu-open', open);
     });
     mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    mnav.addEventListener('click', (e) => { if (e.target === mnav) close(); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
   }
 
   /* ---- scroll-based reveal (no IntersectionObserver dependency) ---- */
