@@ -1382,29 +1382,5 @@
     });
   });
 
-  /* ---- lead form → email via FormSubmit ---- */
-  [document.getElementById('leadForm'), document.getElementById('leadForm2'), document.getElementById('leadForm3')].forEach(f => {
-    if (!f) return;
-    f.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const btn = f.querySelector('button[type=submit]');
-      const orig = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Отправляем…';
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/info@mypos.kz', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(f)
-        });
-        if (!res.ok) throw new Error('bad status');
-        btn.textContent = 'Заявка отправлена ✓';
-        btn.style.background = 'var(--green)';
-        setTimeout(()=>{ f.reset(); btn.textContent = orig; btn.style.background=''; btn.disabled=false; }, 3000);
-      } catch (_){
-        btn.textContent = 'Позвоните: +7 747 595 64 12';
-        setTimeout(()=>{ btn.textContent = orig; btn.disabled=false; }, 3500);
-      }
-    });
-  });
+  /* ---- lead form handler moved inline (→ WhatsApp) ---- */
 })();

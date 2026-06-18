@@ -68,20 +68,11 @@
       <a href="index.html#main">Главная</a>
       <a href="index.html#about">Продукт</a>
       <a href="index.html#telemetry">Телеметрия</a>
-      <div class="nav-dd">
-        <button class="nav-dd-btn active" type="button" aria-expanded="false">Решения
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </button>
-        <div class="nav-dd-menu">
-          <a href="kaspi-qr-avtomoyki.html">Автомойки самообслуживания</a>
-          <a href="kaspi-qr-silomery.html" class="active">Игровые автоматы и силомеры</a>
-        </div>
-      </div>
-      <a href="index.html#prices">Цена</a>
-      <a href="index.html#contacts">Контакты</a>
+      <a href="index.html#voice">Аналитика</a>
+      <a href="resheniya.html" class="active">Отрасли</a>
     </nav>
     <div class="hdr-right">
-      <a class="lk" href="http://merchant.multibank.kz" target="_blank" rel="noopener">Личный кабинет</a>
+      <a class="lk" href="https://admin.mypos.kz/" target="_blank" rel="noopener">Личный кабинет</a>
       <a class="btn btn-blue" href="#lead">Заказать устройство</a>
     </div>
     <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
@@ -92,9 +83,8 @@
     <a href="index.html#main">Главная</a>
     <a href="index.html#about">Продукт</a>
     <a href="index.html#telemetry">Телеметрия</a>
-    <a href="kaspi-qr-avtomoyki.html">Решения · Автомойки</a>
-    <a href="kaspi-qr-silomery.html" class="active">Решения · Силомеры</a>
-    <a href="index.html#prices">Цена</a>
+    <a href="index.html#voice">Аналитика</a>
+    <a href="resheniya.html" class="active">Отрасли</a>
     <a class="btn btn-blue" href="#lead">Заказать устройство</a>
   </div>
 </header>
@@ -128,11 +118,13 @@
       <h2 class="pt-title">Подключим ваши аппараты</h2>
       <p class="pt-text">Оставьте заявку — рассчитаем стоимость под количество аппаратов и подключим Kaspi QR.</p>
       <form class="cx2-form pt-form" id="leadForm">
-        <div class="cx2-field"><input type="text" placeholder="Ваше имя" required></div>
-        <div class="cx2-field"><input type="tel" placeholder="Телефон" required></div>
-        <div class="cx2-field"><textarea rows="3" placeholder="Сколько аппаратов?"></textarea></div>
-        <button class="cx2-btn" type="submit" id="leadBtn">Отправить заявку</button>
-        <p class="cx2-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+        <div class="cx2-field"><input type="text" name="name" placeholder="Ваше имя" required></div>
+        <div class="cx2-field"><input type="tel" name="phone" placeholder="Телефон" required></div>
+        <div class="cx2-field"><textarea name="msg" rows="3" placeholder="Сколько аппаратов?"></textarea></div>
+        <button class="cx2-btn cx2-btn-wa" type="submit" id="leadBtn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+          Написать в WhatsApp</button>
+        <p class="cx2-note">Заявка придёт нам в WhatsApp — ответим в рабочее время.</p>
       </form>
     </div>
     <div class="pt-right">
@@ -162,7 +154,7 @@
           <a href="index.html#prices">Стоимость</a>
         </div>
         <div class="foot-col">
-          <h5>Решения</h5>
+          <h5>Вендинг</h5>
           <a href="kaspi-qr-avtomoyki.html">Kaspi QR для автомоек</a>
           <a href="kaspi-qr-silomery.html">Kaspi QR для игровых автоматов</a>
         </div>
@@ -170,7 +162,7 @@
           <h5>Контакты</h5>
           <a href="tel:+77475956412">+7 (747) 595 64 12</a>
           <a href="mailto:info@mypos.kz">info@mypos.kz</a>
-          <a href="http://merchant.multibank.kz" target="_blank" rel="noopener">Личный кабинет</a>
+          <a href="https://admin.mypos.kz/" target="_blank" rel="noopener">Личный кабинет</a>
         </div>
       </div>
     </div>
@@ -182,12 +174,20 @@
 </footer>
 
 <script>
-  document.getElementById('leadForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var b=document.getElementById('leadBtn');
-    b.textContent='Заявка отправлена ✓';
-    b.style.opacity='.7';
-  });
+  (function(){
+    var f=document.getElementById('leadForm');
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
+      var t='Здравствуйте! Заявка с сайта MyPos (Kaspi QR для силомеров).%0AИмя: '+encodeURIComponent(g('name'))+'%0AТелефон: '+encodeURIComponent(g('phone'));
+      var m=g('msg'); if(m) t+='%0AЗадача: '+encodeURIComponent(m);
+      window.open('https://wa.me/77475956412?text='+t,'_blank','noopener');
+      var btn=document.getElementById('leadBtn'), orig=btn.innerHTML;
+      btn.textContent='Открываем WhatsApp…';
+      setTimeout(function(){ btn.innerHTML=orig; f.reset(); },2500);
+    });
+  })();
   (function(){
     var hdr=document.getElementById('hdr');
     if(hdr){ var onHdr=function(){hdr.classList.toggle('scrolled', window.scrollY>16);}; onHdr(); window.addEventListener('scroll', onHdr, {passive:true}); }
